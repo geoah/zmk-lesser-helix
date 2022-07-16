@@ -24,16 +24,14 @@
                      bindings = <
 &kp ESC         &kp Q     &kp W     &kp E     &kp R    &kp T                               &kp Y     &kp U     &kp I      &kp O     &kp P      &kp MINUS 
 &mt LCTL TAB    &kp A     &kp S     &kp D     &kp F    &kp G                               &kp H     &kp J     &kp K      &kp L     &kp SCLN   &kp QUOT
-&kp LSFT        &kp Z     &kp X     &kp C     &kp V    &kp B                               &kp N     &kp M     &kp CMMA   &kp DOT   &kp FSLH   &kp RET
+&kp LSFT        &kp Z     &kp X     &kp C     &kp V    &kp B      &mo ADJ      &trans      &kp N     &kp M     &kp CMMA   &kp DOT   &kp FSLH   &kp RET
 &trans          &trans    &trans    &trans    &kp LALT  &kp LGUI  &kp SPC      &kp BKSP    &mo LWR   &mo RSE   &trans     &trans    &trans     &trans
-&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans     &trans    &trans
                      >;
               };
               lower_layer {
                      bindings = <
 &kp GRAV &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                        &kp N6     &kp N7     &kp N8    &kp N9     &kp N0    &trans
 &trans   &trans    &trans    &trans    &trans    &trans                        &kp LARW   &kp DARW   &kp UARW  &kp RARW   &trans    &trans
-&trans   &trans    &trans    &trans    &trans    &trans                        &trans     &trans     &trans    &trans     &trans    &trans
 &trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans     &trans    &trans     &trans    &trans
 &trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans     &trans    &trans     &trans    &trans
                      >;
@@ -42,18 +40,16 @@
                      bindings = <
 &kp GRAV &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                        &kp N6      &kp N7    &kp N8    &kp N9     &kp N0     &trans
 &trans   &trans    &trans    &trans    &trans    &trans                        &kp MINUS   &kp EQL   &kp LBKT  &kp RBKT   &kp BSLH   &trans
-&trans   &trans    &trans    &trans    &trans    &trans                        &kp MINUS   &kp EQL   &kp LBKT  &kp RBKT   &kp BSLH   &trans
-&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans     &trans     &trans
+&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &kp MINUS   &kp EQL   &kp LBKT  &kp RBKT   &kp BSLH   &trans
 &trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans     &trans     &trans
                      >;
               };
               adjust_layer {
                      bindings = <
-&trans   &reset    &trans    &trans    &trans    &trans                        &trans    &trans    &trans    &trans    &trans    &kp DEL
-&trans   &trans    &trans    &trans    &trans    &trans                        &trans    &trans    &trans    &trans    &trans    &trans
-&trans   &trans    &trans    &trans    &trans    &trans                        &trans    &trans    &trans    &trans    &trans    &trans
-&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
-&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                     &trans    &trans    &trans    &trans    &trans    &trans
+&trans       &trans       &trans       &trans       &trans       &trans                           &trans    &trans    &trans    &trans    &trans    &trans
+&trans       &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans       &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
                      >;
               };
        };
