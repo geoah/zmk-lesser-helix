@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
  
-#include "helix.dtsi"
+#include "helixxx.dtsi"
 
 &kscan0 {
     col-gpios
