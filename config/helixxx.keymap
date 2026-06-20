@@ -17,6 +17,19 @@
  #define ADJ     3
 
 / {
+       behaviors {
+              // Tap for the tap keycode; hold for ~2s to reset the
+              // current Bluetooth pairing. tap-preferred so a normal
+              // press (or pressing other keys) never triggers the reset.
+              btclr_ht: bt_clear_hold_tap {
+                     compatible = "zmk,behavior-hold-tap";
+                     #binding-cells = <2>;
+                     tapping-term-ms = <2000>;
+                     flavor = "tap-preferred";
+                     bindings = <&kp>, <&bt>;
+              };
+       };
+
        keymap {
               compatible = "zmk,keymap";
  
@@ -25,7 +38,7 @@
 &kp ESC         &kp Q     &kp W     &kp E     &kp R    &kp T                               &kp Y     &kp U     &kp I      &kp O     &kp P      &kp MINUS 
 &mt LCTL TAB    &kp A     &kp S     &kp D     &kp F    &kp G                               &kp H     &kp J     &kp K      &kp L     &kp SCLN   &kp QUOT
 &kp LSFT        &kp Z     &kp X     &kp C     &kp V    &kp B      &mo ADJ      &trans      &kp N     &kp M     &kp CMMA   &kp DOT   &kp FSLH   &kp RET
-                                              &kp LALT  &kp LGUI  &kp SPC      &kp BKSP    &mo LWR   &mo RSE
+&kp GLOBE       &btclr_ht LCTL BT_CLR  &kp HOME  &kp END  &kp LALT  &kp LGUI  &kp SPC      &kp BKSP    &mo LWR   &mo RSE   &kp LARW   &kp DARW  &kp UARW   &kp RARW
                      >;
               };
               lower_layer {
@@ -33,7 +46,7 @@
 &kp GRAV &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                        &kp N6     &kp N7     &kp N8    &kp N9     &kp N0    &trans
 &trans   &trans    &trans    &trans    &trans    &trans                        &kp LARW   &kp DARW   &kp UARW  &kp RARW   &trans    &trans
 &trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans     &trans    &trans     &trans    &trans
-                                       &trans    &trans    &trans    &trans    &trans     &trans
+&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans     &trans    &trans     &trans    &trans
                      >;
               };
               raise_layer {
@@ -41,7 +54,7 @@
 &kp GRAV &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                        &kp N6      &kp N7    &kp N8    &kp N9     &kp N0     &trans
 &trans   &trans    &trans    &trans    &trans    &trans                        &kp MINUS   &kp EQL   &kp LBKT  &kp RBKT   &kp BSLH   &trans
 &trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &kp MINUS   &kp EQL   &kp LBKT  &kp RBKT   &kp BSLH   &trans
-                                       &trans    &trans    &trans    &trans    &trans      &trans
+&trans   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans     &trans     &trans
                      >;
               };
               adjust_layer {
@@ -49,7 +62,7 @@
 &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                     &trans    &trans    &trans    &trans    &trans    &trans
 &trans       &trans       &trans       &trans       &trans       &trans                           &trans    &trans    &trans    &trans    &trans    &trans
 &trans       &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                                    &trans       &trans       &trans    &trans    &trans    &trans
+&trans       &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
                      >;
               };
        };
