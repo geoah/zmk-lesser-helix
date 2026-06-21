@@ -17,3 +17,7 @@ include:
     shield: helixxx_left
   - board: nice_nano//zmk
     shield: helixxx_right
+  # Flash this to both halves to wipe stale BLE bonds/settings,
+  # then flash the real firmware again and re-pair.
+  - board: nice_nano//zmk
+    shield: settings_reset
